@@ -13,6 +13,7 @@
   <a href="https://github.com/iamanwaralam/netcurb-releases/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/iamanwaralam/netcurb-releases?label=latest&color=2952CC"></a>
   <a href="https://github.com/iamanwaralam/netcurb-releases/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/iamanwaralam/netcurb-releases/total?color=2952CC"></a>
   <img alt="Linux" src="https://img.shields.io/badge/Linux-deb%20%7C%20rpm%20%7C%20Arch-2952CC">
+  <img alt="Windows" src="https://img.shields.io/badge/Windows-10%20%7C%2011-2952CC">
 </p>
 
 <p align="center">
@@ -26,9 +27,10 @@
 | Ubuntu 24.04+, Debian 13+, Kali, Linux Mint 22+, Pop!_OS 24.04+ | [**netcurb_1.1.0_amd64.deb**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb_1.1.0_amd64.deb) |
 | Fedora, RHEL / Rocky / Alma 9+ | [**netcurb-1.1.0-1.x86_64.rpm**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb-1.1.0-1.x86_64.rpm) |
 | Arch, Manjaro, EndeavourOS | [**netcurb-1.1.0-1-x86_64.pkg.tar.zst**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb-1.1.0-1-x86_64.pkg.tar.zst) |
+| Windows 10 / 11 (64-bit) | [**Netcurb-1.1.0.msi**](https://github.com/iamanwaralam/netcurb-releases/releases/download/windows-v1.1.0/Netcurb-1.1.0.msi) |
 
 All versions and checksums: [Releases](https://github.com/iamanwaralam/netcurb-releases/releases).
-**Android** is coming to Google Play, **Windows** soon, and **macOS** later.
+**Android** is coming to Google Play, and **macOS** later.
 
 ## Features
 
@@ -124,6 +126,27 @@ distribution. Each step is one command: copy it, paste it into the terminal, pre
 
 </details>
 
+<details>
+<summary><b>Windows 10 / 11</b> (.msi)</summary>
+
+1. Download [**Netcurb-1.1.0.msi**](https://github.com/iamanwaralam/netcurb-releases/releases/download/windows-v1.1.0/Netcurb-1.1.0.msi).
+2. *(Optional)* Check the download. Download
+   [SHA256SUMS](https://github.com/iamanwaralam/netcurb-releases/releases/download/windows-v1.1.0/SHA256SUMS), then
+   in PowerShell in your Downloads folder run the command below; the result must match the line for
+   `Netcurb-1.1.0.msi`:
+   ```powershell
+   Get-FileHash .\Netcurb-1.1.0.msi
+   ```
+3. Double-click **Netcurb-1.1.0.msi**. The installer isn't signed yet, so Windows may show
+   **"Windows protected your PC"**: click **More info**, then **Run anyway**.
+4. Click **Yes** when Windows asks whether the installer may make changes.
+5. Open **Netcurb** from the Start menu.
+
+If **Smart App Control** blocks the installer, it's turned on for your PC (Windows Security → App & browser control →
+Smart App Control). A signed installer is planned.
+
+</details>
+
 **Upgrading from NetLock?** Install Netcurb the same way. It replaces NetLock automatically (on Arch, answer
 <kbd>Y</kbd> when pacman asks to remove `netlock`). Your blocked apps carry over; open Netcurb and turn the firewall on
 once more.
@@ -135,7 +158,8 @@ and install it with the same command as above.
 
 1. Open **Netcurb** from your app menu.
 2. Tap the switch next to an app so it turns red, then turn the firewall **on**.
-3. Enter your password **once**. A small background service applies your rules from then on.
+3. Enter your password **once** (on Windows: click **Yes** on the admin prompt). A small background service applies
+   your rules from then on.
 4. Close the app you blocked and open it again **from the menu or dock**. It now has no internet; everything else
    works as before.
 
@@ -143,14 +167,24 @@ To allow an app again, tap its switch, or turn the firewall off.
 
 ## Requirements
 
+**Linux**
+
 - x86_64 PC with **systemd** and **cgroup v2** (standard on current distributions)
 - **GNOME** or **KDE Plasma** desktop, on X11 or Wayland
 - `nftables` and `pkexec` (installed automatically with the package)
 
+**Windows**
+
+- Windows 10 or 11, 64-bit
+- **Windows Defender Firewall** turned on (Netcurb warns if it's off)
+
 ## Good to know
 
-- **Restart an app after blocking it.** Connections it already opened can stay up until then.
-- **Start blocked apps from the menu or dock.** Apps started from a terminal aren't blocked.
+- **Linux: restart an app after blocking it.** Connections it already opened can stay up until then.
+- **Linux: start blocked apps from the menu or dock.** Apps started from a terminal aren't blocked.
+- **Windows: blocking works at once**, without restarting the app.
+- **Windows: apps that show web pages through WebView2** (WhatsApp, Teams, new Outlook…) can't be fully blocked.
+  Netcurb marks them "Can't be fully blocked".
 - **XFCE, MATE, Cinnamon and LXQt** aren't supported yet. Netcurb installs there, but it can't block apps.
 - **Not available yet:** an ARM build, and packages for Ubuntu 22.04 or Debian 12.
 
@@ -170,6 +204,10 @@ This also removes Netcurb's background service and firewall rules. Your list of 
 ```sh
 rm -rf ~/.local/share/Netcurb
 ```
+
+**Windows:** Settings → Apps → Installed apps → **Netcurb** → Uninstall. This removes the background engine and all
+Netcurb firewall rules. Your list of blocked apps is kept in `%LOCALAPPDATA%\Netcurb`; delete that folder to remove it
+too.
 
 ## Privacy
 
