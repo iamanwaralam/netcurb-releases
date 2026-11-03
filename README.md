@@ -23,11 +23,11 @@
 
 | Distribution | Package |
 |---|---|
-| Ubuntu 24.04+, Debian 13+, Kali, Linux Mint 22+, Pop!_OS 24.04+ | `.deb` |
-| Fedora, RHEL / Rocky / Alma 9+ | `.rpm` |
-| Arch, Manjaro, EndeavourOS | `.pkg.tar.zst` |
+| Ubuntu 24.04+, Debian 13+, Kali, Linux Mint 22+, Pop!_OS 24.04+ | [**netcurb_1.1.0_amd64.deb**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb_1.1.0_amd64.deb) |
+| Fedora, RHEL / Rocky / Alma 9+ | [**netcurb-1.1.0-1.x86_64.rpm**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb-1.1.0-1.x86_64.rpm) |
+| Arch, Manjaro, EndeavourOS | [**netcurb-1.1.0-1-x86_64.pkg.tar.zst**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb-1.1.0-1-x86_64.pkg.tar.zst) |
 
-Get the package for your distribution from the [latest release](https://github.com/iamanwaralam/netcurb-releases/releases/latest) (checksums are on the same page).
+All versions and checksums: [Releases](https://github.com/iamanwaralam/netcurb-releases/releases).
 **Android** is coming to Google Play, **Windows** soon, and **macOS** later.
 
 ## Features
@@ -48,15 +48,88 @@ Get the package for your distribution from the [latest release](https://github.c
 
 ## Install
 
-Download the package for your distribution, then:
+Open a terminal (<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> on most desktops) and follow the steps for your
+distribution. Each step is one command: copy it, paste it into the terminal, press <kbd>Enter</kbd>.
 
-```sh
-sudo apt install ./netcurb_*_amd64.deb          # Ubuntu, Debian, Kali, Mint, Pop!_OS
-sudo dnf install ./netcurb-*.x86_64.rpm          # Fedora, RHEL, Rocky, Alma
-sudo pacman -U ./netcurb-*-x86_64.pkg.tar.zst   # Arch, EndeavourOS, Manjaro
-```
+<details open>
+<summary><b>Ubuntu, Debian, Kali, Linux Mint, Pop!_OS</b> (.deb)</summary>
 
-Optional: check the download with `sha256sum -c SHA256SUMS --ignore-missing` (`SHA256SUMS` is on the release page).
+1. Go to your Downloads folder:
+   ```sh
+   cd ~/Downloads
+   ```
+2. Download Netcurb:
+   ```sh
+   wget https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb_1.1.0_amd64.deb
+   ```
+3. *(Optional)* Check the download. It should print `netcurb_1.1.0_amd64.deb: OK`:
+   ```sh
+   wget -q https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/SHA256SUMS
+   sha256sum -c SHA256SUMS --ignore-missing
+   ```
+4. Install it (enter your password when asked, then press <kbd>Y</kbd> if apt asks to continue):
+   ```sh
+   sudo apt install ./netcurb_1.1.0_amd64.deb
+   ```
+   Keep the `./` in front of the file name, so apt installs this file instead of searching online.
+5. Open **Netcurb** from your app menu.
+
+</details>
+
+<details>
+<summary><b>Fedora, RHEL, Rocky Linux, AlmaLinux</b> (.rpm)</summary>
+
+1. Go to your Downloads folder:
+   ```sh
+   cd ~/Downloads
+   ```
+2. Download Netcurb:
+   ```sh
+   curl -LO https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb-1.1.0-1.x86_64.rpm
+   ```
+3. *(Optional)* Check the download. It should print `netcurb-1.1.0-1.x86_64.rpm: OK`:
+   ```sh
+   curl -LO https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/SHA256SUMS
+   sha256sum -c SHA256SUMS --ignore-missing
+   ```
+4. Install it (enter your password when asked, then press <kbd>Y</kbd> to confirm):
+   ```sh
+   sudo dnf install ./netcurb-1.1.0-1.x86_64.rpm
+   ```
+5. Open **Netcurb** from your app menu.
+
+</details>
+
+<details>
+<summary><b>Arch Linux, Manjaro, EndeavourOS</b> (.pkg.tar.zst)</summary>
+
+1. Go to your Downloads folder:
+   ```sh
+   cd ~/Downloads
+   ```
+2. Download Netcurb:
+   ```sh
+   curl -LO https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb-1.1.0-1-x86_64.pkg.tar.zst
+   ```
+3. *(Optional)* Check the download. It should print `netcurb-1.1.0-1-x86_64.pkg.tar.zst: OK`:
+   ```sh
+   curl -LO https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/SHA256SUMS
+   sha256sum -c SHA256SUMS --ignore-missing
+   ```
+4. Install it (enter your password when asked, then press <kbd>Y</kbd> to confirm):
+   ```sh
+   sudo pacman -U ./netcurb-1.1.0-1-x86_64.pkg.tar.zst
+   ```
+5. Open **Netcurb** from your app menu.
+
+</details>
+
+**Upgrading from NetLock?** Install Netcurb the same way. It replaces NetLock automatically (on Arch, answer
+<kbd>Y</kbd> when pacman asks to remove `netlock`). Your blocked apps carry over; open Netcurb and turn the firewall on
+once more.
+
+**Updating to a newer Netcurb:** download the new package from [Releases](https://github.com/iamanwaralam/netcurb-releases/releases)
+and install it with the same command as above.
 
 ## How to use
 
@@ -83,12 +156,20 @@ To allow an app again, tap its switch, or turn the firewall off.
 
 ## Uninstall
 
-```sh
-sudo apt remove netcurb      # or: sudo dnf remove netcurb / sudo pacman -R netcurb
-```
+Run the command for your distribution in a terminal:
+
+| Distribution | Command |
+|---|---|
+| Ubuntu, Debian, Kali, Mint, Pop!_OS | `sudo apt remove netcurb` |
+| Fedora, RHEL, Rocky, Alma | `sudo dnf remove netcurb` |
+| Arch, Manjaro, EndeavourOS | `sudo pacman -R netcurb` |
 
 This also removes Netcurb's background service and firewall rules. Your list of blocked apps is kept in
-`~/.local/share/Netcurb`; delete that folder to remove it too.
+`~/.local/share/Netcurb`. To remove it too:
+
+```sh
+rm -rf ~/.local/share/Netcurb
+```
 
 ## Privacy
 
