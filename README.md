@@ -180,9 +180,9 @@ To allow an app again, tap its switch, or turn the firewall off.
 
 ## Good to know
 
-- **Linux: restart an app after blocking it.** Connections it already opened can stay up until then.
+- **Restart an app after blocking it** (Linux and Windows). Connections it already opened, e.g. a browser's open
+  tabs, can stay up until then: fully close it (also from the system tray) and open it again.
 - **Linux: start blocked apps from the menu or dock.** Apps started from a terminal aren't blocked.
-- **Windows: blocking works at once**, without restarting the app.
 - **Windows: apps that show web pages through WebView2** (WhatsApp, Teams, new Outlook…) can't be fully blocked.
   Netcurb marks them "Can't be fully blocked".
 - **XFCE, MATE, Cinnamon and LXQt** aren't supported yet. Netcurb installs there, but it can't block apps.
