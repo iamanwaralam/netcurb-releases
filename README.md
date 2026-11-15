@@ -24,10 +24,10 @@
 
 | Distribution | Package |
 |---|---|
-| Ubuntu 24.04+, Debian 13+, Kali, Linux Mint 22+, Pop!_OS 24.04+ | [**netcurb_1.1.0_amd64.deb**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb_1.1.0_amd64.deb) |
-| Fedora, RHEL / Rocky / Alma 9+ | [**netcurb-1.1.0-1.x86_64.rpm**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb-1.1.0-1.x86_64.rpm) |
-| Arch, Manjaro, EndeavourOS | [**netcurb-1.1.0-1-x86_64.pkg.tar.zst**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb-1.1.0-1-x86_64.pkg.tar.zst) |
-| Windows 10 / 11 (64-bit) | [**Microsoft Store**](https://apps.microsoft.com/detail/9NRSVQMXJ23W) (recommended) or `winget install 9NRSVQMXJ23W` · installer: [Netcurb-1.1.0.msi](https://github.com/iamanwaralam/netcurb-releases/releases/download/windows-v1.1.0/Netcurb-1.1.0.msi) |
+| Ubuntu 24.04+, Debian 13+, Kali, Linux Mint 22+, Pop!_OS 24.04+ | [**netcurb_1.1.2_amd64.deb**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.2/netcurb_1.1.2_amd64.deb) |
+| Fedora, RHEL / Rocky / Alma 9+ | [**netcurb-1.1.2-1.x86_64.rpm**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.2/netcurb-1.1.2-1.x86_64.rpm) |
+| Arch, Manjaro, EndeavourOS | [**netcurb-1.1.2-1-x86_64.pkg.tar.zst**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.2/netcurb-1.1.2-1-x86_64.pkg.tar.zst) |
+| Windows 10 / 11 (64-bit) | [**Microsoft Store**](https://apps.microsoft.com/detail/9NRSVQMXJ23W) (recommended) or `winget install 9NRSVQMXJ23W` · installer: [Netcurb-1.1.2.msi](https://github.com/iamanwaralam/netcurb-releases/releases/download/windows-v1.1.2/Netcurb-1.1.2.msi) |
 
 All versions and checksums: [Releases](https://github.com/iamanwaralam/netcurb-releases/releases).
 **Android** is coming to Google Play, and **macOS** later.
@@ -62,16 +62,16 @@ distribution. Each step is one command: copy it, paste it into the terminal, pre
    ```
 2. Download Netcurb:
    ```sh
-   wget https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb_1.1.0_amd64.deb
+   wget https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.2/netcurb_1.1.2_amd64.deb
    ```
-3. *(Optional)* Check the download. It should print `netcurb_1.1.0_amd64.deb: OK`:
+3. *(Optional)* Check the download. It should print `netcurb_1.1.2_amd64.deb: OK`:
    ```sh
-   wget -q https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/SHA256SUMS
+   wget -q https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.2/SHA256SUMS
    sha256sum -c SHA256SUMS --ignore-missing
    ```
 4. Install it (enter your password when asked, then press <kbd>Y</kbd> if apt asks to continue):
    ```sh
-   sudo apt install ./netcurb_1.1.0_amd64.deb
+   sudo apt install ./netcurb_1.1.2_amd64.deb
    ```
    Keep the `./` in front of the file name, so apt installs this file instead of searching online.
 5. Open **Netcurb** from your app menu.
@@ -87,16 +87,16 @@ distribution. Each step is one command: copy it, paste it into the terminal, pre
    ```
 2. Download Netcurb:
    ```sh
-   curl -LO https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb-1.1.0-1.x86_64.rpm
+   curl -LO https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.2/netcurb-1.1.2-1.x86_64.rpm
    ```
-3. *(Optional)* Check the download. It should print `netcurb-1.1.0-1.x86_64.rpm: OK`:
+3. *(Optional)* Check the download. It should print `netcurb-1.1.2-1.x86_64.rpm: OK`:
    ```sh
-   curl -LO https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/SHA256SUMS
+   curl -LO https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.2/SHA256SUMS
    sha256sum -c SHA256SUMS --ignore-missing
    ```
 4. Install it (enter your password when asked, then press <kbd>Y</kbd> to confirm):
    ```sh
-   sudo dnf install ./netcurb-1.1.0-1.x86_64.rpm
+   sudo dnf install ./netcurb-1.1.2-1.x86_64.rpm
    ```
 5. Open **Netcurb** from your app menu.
 
@@ -111,16 +111,16 @@ distribution. Each step is one command: copy it, paste it into the terminal, pre
    ```
 2. Download Netcurb:
    ```sh
-   curl -LO https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb-1.1.0-1-x86_64.pkg.tar.zst
+   curl -LO https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.2/netcurb-1.1.2-1-x86_64.pkg.tar.zst
    ```
-3. *(Optional)* Check the download. It should print `netcurb-1.1.0-1-x86_64.pkg.tar.zst: OK`:
+3. *(Optional)* Check the download. It should print `netcurb-1.1.2-1-x86_64.pkg.tar.zst: OK`:
    ```sh
-   curl -LO https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/SHA256SUMS
+   curl -LO https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.2/SHA256SUMS
    sha256sum -c SHA256SUMS --ignore-missing
    ```
 4. Install it (enter your password when asked, then press <kbd>Y</kbd> to confirm):
    ```sh
-   sudo pacman -U ./netcurb-1.1.0-1-x86_64.pkg.tar.zst
+   sudo pacman -U ./netcurb-1.1.2-1-x86_64.pkg.tar.zst
    ```
 5. Open **Netcurb** from your app menu.
 
@@ -138,15 +138,15 @@ distribution. Each step is one command: copy it, paste it into the terminal, pre
 **Or the .msi installer** (no Microsoft account or Store needed). Use one or the other: uninstall the .msi version
 before installing from the Store.
 
-1. Download [**Netcurb-1.1.0.msi**](https://github.com/iamanwaralam/netcurb-releases/releases/download/windows-v1.1.0/Netcurb-1.1.0.msi).
+1. Download [**Netcurb-1.1.2.msi**](https://github.com/iamanwaralam/netcurb-releases/releases/download/windows-v1.1.2/Netcurb-1.1.2.msi).
 2. *(Optional)* Check the download. Download
-   [SHA256SUMS](https://github.com/iamanwaralam/netcurb-releases/releases/download/windows-v1.1.0/SHA256SUMS), then
+   [SHA256SUMS](https://github.com/iamanwaralam/netcurb-releases/releases/download/windows-v1.1.2/SHA256SUMS), then
    in PowerShell in your Downloads folder run the command below; the result must match the line for
-   `Netcurb-1.1.0.msi`:
+   `Netcurb-1.1.2.msi`:
    ```powershell
-   Get-FileHash .\Netcurb-1.1.0.msi
+   Get-FileHash .\Netcurb-1.1.2.msi
    ```
-3. Double-click **Netcurb-1.1.0.msi**. The installer isn't signed yet, so Windows may show
+3. Double-click **Netcurb-1.1.2.msi**. The installer isn't signed yet, so Windows may show
    **"Windows protected your PC"**: click **More info**, then **Run anyway**.
 4. Click **Yes** when Windows asks whether the installer may make changes.
 5. Open **Netcurb** from the Start menu.
