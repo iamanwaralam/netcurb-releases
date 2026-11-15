@@ -27,7 +27,7 @@
 | Ubuntu 24.04+, Debian 13+, Kali, Linux Mint 22+, Pop!_OS 24.04+ | [**netcurb_1.1.0_amd64.deb**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb_1.1.0_amd64.deb) |
 | Fedora, RHEL / Rocky / Alma 9+ | [**netcurb-1.1.0-1.x86_64.rpm**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb-1.1.0-1.x86_64.rpm) |
 | Arch, Manjaro, EndeavourOS | [**netcurb-1.1.0-1-x86_64.pkg.tar.zst**](https://github.com/iamanwaralam/netcurb-releases/releases/download/linux-v1.1.0/netcurb-1.1.0-1-x86_64.pkg.tar.zst) |
-| Windows 10 / 11 (64-bit) | [**Netcurb-1.1.0.msi**](https://github.com/iamanwaralam/netcurb-releases/releases/download/windows-v1.1.0/Netcurb-1.1.0.msi) |
+| Windows 10 / 11 (64-bit) | [**Microsoft Store**](https://apps.microsoft.com/detail/9NRSVQMXJ23W) (recommended) or `winget install 9NRSVQMXJ23W` · installer: [Netcurb-1.1.0.msi](https://github.com/iamanwaralam/netcurb-releases/releases/download/windows-v1.1.0/Netcurb-1.1.0.msi) |
 
 All versions and checksums: [Releases](https://github.com/iamanwaralam/netcurb-releases/releases).
 **Android** is coming to Google Play, and **macOS** later.
@@ -127,7 +127,16 @@ distribution. Each step is one command: copy it, paste it into the terminal, pre
 </details>
 
 <details>
-<summary><b>Windows 10 / 11</b> (.msi)</summary>
+<summary><b>Windows 10 / 11</b> (Microsoft Store or .msi)</summary>
+
+**Recommended: Microsoft Store.** Signed by Microsoft (no SmartScreen warning) and updates automatically.
+
+1. Open [**Netcurb on the Microsoft Store**](https://apps.microsoft.com/detail/9NRSVQMXJ23W) and click **Get** (or
+   **Install**). Or, in a terminal: `winget install 9NRSVQMXJ23W`.
+2. Open **Netcurb** from the Start menu.
+
+**Or the .msi installer** (no Microsoft account or Store needed). Use one or the other: uninstall the .msi version
+before installing from the Store.
 
 1. Download [**Netcurb-1.1.0.msi**](https://github.com/iamanwaralam/netcurb-releases/releases/download/windows-v1.1.0/Netcurb-1.1.0.msi).
 2. *(Optional)* Check the download. Download
@@ -151,7 +160,7 @@ Smart App Control). A signed installer is planned.
 <kbd>Y</kbd> when pacman asks to remove `netlock`). Your blocked apps carry over; open Netcurb and turn the firewall on
 once more.
 
-**Updating to a newer Netcurb:** download the new package from [Releases](https://github.com/iamanwaralam/netcurb-releases/releases)
+**Updating to a newer Netcurb:** the Microsoft Store version updates itself. For the other packages, download the new package from [Releases](https://github.com/iamanwaralam/netcurb-releases/releases)
 and install it with the same command as above.
 
 ## How to use
